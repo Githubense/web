@@ -1,40 +1,75 @@
-title: My Portfolio Website
-description: A showcase of my work and achievements
+title: Angel Adrian Pimienta Flores - Portfolio
+description: iOS Developer and Computer Systems Engineering student showcasing projects in Swift, AR/VR, and AI
 author: Angel Adrian Pimienta Flores
 email: angel.pimientafs@udlap.mx
-github: https://github.com/Githubense
-theme: glassmorphism
-layout: bento-grid
-portfolio_items:
-  - title: About Me
-    image: assets/images/about-bg.jpg
-    video: null
-  - title: Code
-    image: assets/images/code-bg.jpg
-    video: null
-  - title: Education
-    image: assets/images/education-bg.jpg
-    video: null
-  - title: Design
-    image: assets/images/design-bg.jpg
-    video: null
-  - title: Achievements
-    image: assets/images/achievements-bg.jpg
-    video: null
-  - title: Certifications
-    image: assets/images/certifications-bg.jpg
-    video: null
-  - title: Skills
-    image: assets/images/skills-bg.jpg
-    video: null
-  - title: Apps
-    image: assets/images/apps-bg.jpg
-    video: null
-  - title: Contact
-    image: assets/images/contact-bg.jpg
-    video: null
+github_username: Githubense
+url: "https://githubense.github.io"
+baseurl: "/web"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Include files
+include:
+  - _pages
+
+# Exclude files
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Portfolio settings
+portfolio:
+  title: "Portfolio"
+  description: "A showcase of my work and achievements"
+  items:
+    - title: About Me
+      image: assets/images/about-bg.jpg
+      video: null
+    - title: Code
+      image: assets/images/code-bg.jpg
+      video: null
+    - title: Education
+      image: assets/images/education-bg.jpg
+      video: null
+    - title: Design
+      image: assets/images/design-bg.jpg
+      video: null
+    - title: Achievements
+      image: assets/images/achievements-bg.jpg
+      video: null
+    - title: Certifications
+      image: assets/images/certifications-bg.jpg
+      video: null
+    - title: Skills
+      image: assets/images/skills-bg.jpg
+      video: null
+    - title: Apps
+      image: assets/images/apps-bg.jpg
+      video: null
+    - title: Contact
+      image: assets/images/contact-bg.jpg
+      video: null
+
+# Social links
 social_links:
-  linkedin: https://www.linkedin.com/in/yourprofile
-  twitter: https://twitter.com/yourprofile
-  instagram: https://instagram.com/yourprofile
-  facebook: https://facebook.com/yourprofile
+  github: https://github.com/Githubense
+  email: angel.pimientafs@udlap.mx
+
+# SEO settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# GitHub Pages specific settings
+github: [metadata]

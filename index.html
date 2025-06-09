@@ -3,59 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <title>Angel Adrian Pimienta Flores - Portfolio</title>
+    <meta name="description" content="iOS Developer and Computer Systems Engineering student showcasing projects in Swift, AR/VR, and AI">
+    <link rel="stylesheet" href="portfolio-website/css/styles.css">
+    <link rel="stylesheet" href="portfolio-website/css/animations.css">
 </head>
 <body>
-    <header>
-        <h1>Angel Adrian Pimienta Flores</h1>
-        <p>Welcome to my portfolio!</p>
-    </header>
-    <main>
-        <section class="bento-grid">
-            <div class="bento-item" id="about-me">
-                <img src="assets/images/about-bg.jpg" alt="About Me">
-                <div class="banner">About Me</div>
+    <div class="portfolio-container">
+        <div class="bento-grid">
+            <!-- About Me -->
+            <div class="bento about-me" data-section="about">
+                <div class="bento-background"></div>
+                <div class="banner">I am Angel Pimienta</div>
+                <div class="bento-details">
+                    <h2>About Me</h2>
+                    <p>Computer Systems & Robotics Engineering student at UDLAP with a passion for iOS development and AI. Currently studying at Apple Developer Academy @ Federico II in Naples, Italy.</p>
+                    <div class="details">
+                        <p><strong>Location:</strong> Puebla, MX / Naples, IT</p>
+                        <p><strong>Focus:</strong> iOS Development, Machine Learning, Robotics</p>
+                        <p><strong>Languages:</strong> Spanish (Native), English (Fluent), Italian (Learning)</p>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="code">
-                <img src="assets/images/code-bg.jpg" alt="Code">
+
+            <!-- Code -->
+            <div class="bento code" data-section="code">
+                <div class="bento-background"></div>
                 <div class="banner">Code</div>
+                <div class="bento-details">
+                    <h2>Code Projects</h2>
+                    <div class="project-list">
+                        <div class="project">
+                            <h3>NewMom Care iOS App</h3>
+                            <p>ML-powered app for new mothers using ARKit and RealityKit</p>
+                            <div class="tech-stack">Swift, ARKit, RealityKit, ML</div>
+                        </div>
+                        <div class="project">
+                            <h3>Financial Inclusion Banking App</h3>
+                            <p>BBVA-branded iOS app with Firebase and AI support</p>
+                            <div class="tech-stack">Swift, Firebase, OpenAI API</div>
+                        </div>
+                        <div class="project">
+                            <h3>Accessibility Social Media</h3>
+                            <p>Platform for visually and hearing impaired users</p>
+                            <div class="tech-stack">PHP, SQL, Accessibility APIs</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="education">
-                <img src="assets/images/education-bg.jpg" alt="Education">
+
+            <!-- Education -->
+            <div class="bento education" data-section="education">
+                <div class="bento-background"></div>
                 <div class="banner">Education</div>
+                <div class="bento-details">
+                    <h2>Education</h2>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <h3>Apple Developer Academy @ Federico II</h3>
+                            <p>Naples, Italy • 2025</p>
+                            <p>Coding, GUI Design, Business</p>
+                        </div>
+                        <div class="education-item">
+                            <h3>Computer Systems Engineering</h3>
+                            <p>UDLAP • GPA: 94/100</p>
+                            <p>App Development, ML, Cloud Computing, AI</p>
+                        </div>
+                        <div class="education-item">
+                            <h3>Robotics & Telecommunications</h3>
+                            <p>UDLAP • GPA: 94/100</p>
+                            <p>Robotics Vision, Kinematics, Wireless Networks</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="design">
-                <img src="assets/images/design-bg.jpg" alt="Design">
+
+            <!-- Design -->
+            <div class="bento design" data-section="design">
+                <div class="bento-background"></div>
                 <div class="banner">Design</div>
+                <div class="bento-details">
+                    <h2>Design Portfolio</h2>
+                    <div class="design-showcase">
+                        <div class="design-item">
+                            <h3>iOS App UI/UX</h3>
+                            <p>Native iOS interfaces following Apple's Human Interface Guidelines</p>
+                        </div>
+                        <div class="design-item">
+                            <h3>Accessibility-First Design</h3>
+                            <p>Inclusive design for users with visual and hearing impairments</p>
+                        </div>
+                        <div class="design-item">
+                            <h3>AR/VR Interfaces</h3>
+                            <p>Spatial computing interfaces using ARKit and RealityKit</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="achievements">
-                <img src="assets/images/achievements-bg.jpg" alt="Achievements">
+
+            <!-- Achievements -->
+            <div class="bento achievements" data-section="achievements">
+                <div class="bento-background"></div>
                 <div class="banner">Achievements</div>
+                <div class="bento-details">
+                    <h2>Achievements</h2>
+                    <div class="achievement-list">
+                        <div class="achievement">
+                            <h3>🥈 2nd Place - Mission Alignment Challenge</h3>
+                            <p>Apple Inc. & Enactus Mexico • November 2023</p>
+                            <p>iOS app for new mothers using ML and AR</p>
+                        </div>
+                        <div class="achievement">
+                            <h3>🎤 BBVA Invited Presenter</h3>
+                            <p>BBVA México HQ • July 2024</p>
+                            <p>Financial inclusion app presentation</p>
+                        </div>
+                        <div class="achievement">
+                            <h3>🏆 FEPRO 2022 Finalist</h3>
+                            <p>BUAP • November 2022</p>
+                            <p>Accessibility social media platform</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="certifications">
-                <img src="assets/images/certifications-bg.jpg" alt="Certifications">
+
+            <!-- Certifications -->
+            <div class="bento certifications" data-section="certifications">
+                <div class="bento-background"></div>
                 <div class="banner">Certifications</div>
+                <div class="bento-details">
+                    <h2>Certifications</h2>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <h3>Google Cloud Computing Foundations</h3>
+                            <p>Google & UDLAP • February 2024</p>
+                        </div>
+                        <div class="cert-item">
+                            <h3>Python Programming Workshop</h3>
+                            <p>UDLAP • June 2022</p>
+                        </div>
+                        <div class="cert-item">
+                            <h3>Technician in Informatics and Design</h3>
+                            <p>Instituto de Estudios Empresariales • August 2017</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="skills">
-                <img src="assets/images/skills-bg.jpg" alt="Skills">
+
+            <!-- Skills -->
+            <div class="bento skills" data-section="skills">
+                <div class="bento-background"></div>
                 <div class="banner">Skills</div>
+                <div class="bento-details">
+                    <h2>Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Programming</h3>
+                            <div class="skill-tags">
+                                <span>Swift</span>
+                                <span>Python</span>
+                                <span>PHP</span>
+                                <span>SQL</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Frameworks</h3>
+                            <div class="skill-tags">
+                                <span>ARKit</span>
+                                <span>RealityKit</span>
+                                <span>Firebase</span>
+                                <span>OpenAI API</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools</h3>
+                            <div class="skill-tags">
+                                <span>Xcode</span>
+                                <span>Google Cloud</span>
+                                <span>Git</span>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="apps">
-                <img src="assets/images/apps-bg.jpg" alt="Apps">
+
+            <!-- Apps -->
+            <div class="bento apps" data-section="apps">
+                <div class="bento-background"></div>
                 <div class="banner">Apps</div>
+                <div class="bento-details">
+                    <h2>Apps</h2>
+                    <div class="app-showcase">
+                        <div class="app-item">
+                            <h3>NewMom Care</h3>
+                            <p>AI-powered newborn care assistant with AR features</p>
+                            <div class="app-status">🏆 Award Winner</div>
+                        </div>
+                        <div class="app-item">
+                            <h3>FinanceConnect</h3>
+                            <p>Banking app for financial inclusion with cost-splitting</p>
+                            <div class="app-status">🎤 Presented at BBVA</div>
+                        </div>
+                        <div class="app-item">
+                            <h3>AccessConnect</h3>
+                            <p>Social platform for accessibility-focused communication</p>
+                            <div class="app-status">🏆 Finalist</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bento-item" id="contact">
-                <img src="assets/images/contact-bg.jpg" alt="Contact">
+
+            <!-- Contact -->
+            <div class="bento contact" data-section="contact">
+                <div class="bento-background"></div>
                 <div class="banner">Contact</div>
+                <div class="bento-details">
+                    <h2>Contact</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>📧 Email</h3>
+                            <p>angel.pimientafs@udlap.mx</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📱 Phone</h3>
+                            <p>+52 961 239 4535</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>🌐 GitHub</h3>
+                            <p>github.com/Githubense</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📍 Location</h3>
+                            <p>Puebla, MX / Naples, IT</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2023 Angel Adrian Pimienta Flores. All rights reserved.</p>
-    </footer>
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
+        </div>
+    </div>
+
+    <div class="background-overlay"></div>
+    <script src="portfolio-website/js/main.js"></script>
+    <script src="portfolio-website/js/animations.js"></script>
 </body>
 </html>
