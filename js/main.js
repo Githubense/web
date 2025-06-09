@@ -179,6 +179,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         body.classList.remove('loading');
     }, 100);
+
+    // Modal functionality
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-overlay';
+    body.appendChild(modalOverlay);
+    
+    bentoItems.forEach(item => {
+        const details = item.querySelector('.bento-details');
+        
+        if (details) {
+            // Add close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'close-modal';
+            closeBtn.innerHTML = '×';
+            details.appendChild(closeBtn);
+            
+            // Open modal
+            item.addEventListener('click', function(e) {
+                if (!details.classList.contains('active')) {
+                    e.preventDefault();
+                    
+                    // Close any open modals
+                    document.querySelectorAll('.bento-details.active').forEach(activeDetail => {
+                        activeDetail.classList.remove('active');
+                    });
+                    
+                    // Open this modal
+                    details.classList.add('active');
+                    modalOverlay.classList.add('active');
+                    body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            });
+            
+            // Close modal function
+            function closeModal() {
+                details.classList.remove('active');
+                modalOverlay.classList.remove('active');
+                body.style.overflow = 'auto'; // Restore scrolling
+            }
+            
+            // Close on button click
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeModal();
+            });
+            
+            // Close on overlay click
+            modalOverlay.addEventListener('click', closeModal);
+            
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && details.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        }
+    });
 });
 
 // Error handling
