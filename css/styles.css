@@ -51,8 +51,8 @@ body::before {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 20px;
-    width: 1220px;
-    height: 769px;
+    width: 1280px;
+    height: 832px;
     position: relative;
 }
 
