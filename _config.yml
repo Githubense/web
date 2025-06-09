@@ -28,7 +28,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Portfolio settings
+# Portfolio setting
 portfolio:
   title: "Portfolio"
   description: "A showcase of my work and achievements"
