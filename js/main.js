@@ -6,44 +6,16 @@ let hoverTimeout;
 let isExpanded = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Load portfolio data from JSON file
-    fetch('data/portfolio.json')
-        .then(response => response.json())
-        .then(data => {
-            const portfolioContainer = document.getElementById('portfolio-container');
-            data.portfolioItems.forEach(item => {
-                const bentoElement = createBentoElement(item);
-                portfolioContainer.appendChild(bentoElement);
-            });
-        })
-        .catch(error => console.error('Error loading portfolio data:', error));
-
-    // Function to create a bento grid element
-    function createBentoElement(item) {
-        const bento = document.createElement('div');
-        bento.classList.add('bento');
-        bento.style.backgroundImage = `url(${item.image})`;
-        
-        const banner = document.createElement('div');
-        banner.classList.add('banner');
-        banner.textContent = item.title;
-
-        bento.appendChild(banner);
-        bento.addEventListener('mouseenter', () => {
-            bento.classList.add('hover');
-        });
-        bento.addEventListener('mouseleave', () => {
-            bento.classList.remove('hover');
-        });
-
-        return bento;
-    }
-
     const bentoItems = document.querySelectorAll('.bento');
     const backgroundOverlay = document.querySelector('.background-overlay');
     const body = document.body;
 
-    bentoItems.forEach(item => {
+    console.log('Found bento items:', bentoItems.length);
+    console.log('Background overlay:', backgroundOverlay);
+
+    bentoItems.forEach((item, index) => {
+        console.log(`Setting up bento item ${index}:`, item.className);
+        
         // Hover enter with delay
         item.addEventListener('mouseenter', () => {
             if (isExpanded) return;
@@ -70,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Click to expand (mobile/tablet support)
         item.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('Bento item clicked:', item.className);
             if (isExpanded && item.classList.contains('expanded')) {
                 collapseBentoItem(item);
             } else if (!isExpanded) {
@@ -95,12 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close on background overlay click
-    backgroundOverlay.addEventListener('click', () => {
-        const expandedItem = document.querySelector('.bento.expanded');
-        if (expandedItem) {
-            collapseBentoItem(expandedItem);
-        }
-    });
+    if (backgroundOverlay) {
+        backgroundOverlay.addEventListener('click', () => {
+            const expandedItem = document.querySelector('.bento.expanded');
+            if (expandedItem) {
+                collapseBentoItem(expandedItem);
+            }
+        });
+    }
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
@@ -115,13 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function expandBentoItem(item) {
         if (isExpanded) return;
         
+        console.log('Expanding bento item:', item.className);
         isExpanded = true;
         
         // Add expanded class
         item.classList.add('expanded');
         
         // Show background overlay
-        backgroundOverlay.classList.add('active');
+        if (backgroundOverlay) {
+            backgroundOverlay.classList.add('active');
+        }
         
         // Dim other items
         bentoItems.forEach(otherItem => {
@@ -143,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Trigger entrance animations for content
         setTimeout(() => {
-            const contentItems = item.querySelectorAll('.project, .education-item, .achievement, .cert-item, .app-item, .contact-item');
+            const contentItems = item.querySelectorAll('.project, .education-item, .achievement, .cert-item, .app-item, .contact-item, .design-item');
             contentItems.forEach((contentItem, index) => {
                 setTimeout(() => {
                     contentItem.style.opacity = '1';
@@ -156,13 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function collapseBentoItem(item) {
         if (!isExpanded) return;
         
+        console.log('Collapsing bento item:', item.className);
         isExpanded = false;
         
         // Remove expanded class
         item.classList.remove('expanded');
         
         // Hide background overlay
-        backgroundOverlay.classList.remove('active');
+        if (backgroundOverlay) {
+            backgroundOverlay.classList.remove('active');
+        }
         
         // Restore other items
         bentoItems.forEach(otherItem => {
@@ -175,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.overflow = '';
 
         // Reset content animations
-        const contentItems = item.querySelectorAll('.project, .education-item, .achievement, .cert-item, .app-item, .contact-item');
+        const contentItems = item.querySelectorAll('.project, .education-item, .achievement, .cert-item, .app-item, .contact-item, .design-item');
         contentItems.forEach(contentItem => {
             contentItem.style.opacity = '';
             contentItem.style.transform = '';
@@ -189,7 +170,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('ontouchstart' in window) {
         document.body.classList.add('touch-device');
     }
+
+    // Initialize items as visible (remove loading state)
+    setTimeout(() => {
+        bentoItems.forEach(item => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        });
+        body.classList.remove('loading');
+    }, 100);
 });
+
+// Error handling
+window.addEventListener('error', (e) => {
+    console.error('Portfolio error:', e.error);
+});
+
+// Debug function to check if everything is loaded
+window.debugPortfolio = function() {
+    console.log('Bento items:', document.querySelectorAll('.bento').length);
+    console.log('Background overlay:', document.querySelector('.background-overlay'));
+    console.log('CSS loaded:', document.styleSheets.length);
+};
 
 // Intersection Observer for scroll animations
 const observerOptions = {
@@ -205,8 +207,3 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
-// Error handling
-window.addEventListener('error', (e) => {
-    console.error('Portfolio error:', e.error);
-});

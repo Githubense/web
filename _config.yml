@@ -9,7 +9,9 @@ baseurl: "/web"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+
+# Remove theme line - using custom CSS instead
+# theme: minima
 
 # Include files
 include:
@@ -27,39 +29,12 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md
 
-# Portfolio setting
+# Portfolio settings
 portfolio:
   title: "Portfolio"
   description: "A showcase of my work and achievements"
-  items:
-    - title: About Me
-      image: assets/images/about-bg.jpg
-      video: null
-    - title: Code
-      image: assets/images/code-bg.jpg
-      video: null
-    - title: Education
-      image: assets/images/education-bg.jpg
-      video: null
-    - title: Design
-      image: assets/images/design-bg.jpg
-      video: null
-    - title: Achievements
-      image: assets/images/achievements-bg.jpg
-      video: null
-    - title: Certifications
-      image: assets/images/certifications-bg.jpg
-      video: null
-    - title: Skills
-      image: assets/images/skills-bg.jpg
-      video: null
-    - title: Apps
-      image: assets/images/apps-bg.jpg
-      video: null
-    - title: Contact
-      image: assets/images/contact-bg.jpg
-      video: null
 
 # Social links
 social_links:
