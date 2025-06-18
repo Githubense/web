@@ -319,7 +319,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "/assets/images/illustration-audience-growth.webp"
+        image: "./assets/images/illustration-audience-growth.webp"
       }
     };
 

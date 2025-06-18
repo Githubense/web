@@ -103,13 +103,14 @@
     font-size: var(--heading-font-size, var(--fs-md));
     line-height: 1;
     text-wrap: balance;
+  }
 
-    span {
-      display: var(--heading-span-display, inline);
-      color: var(--heading-span-foreground, var(--black));
-      font-size: var(--heading-span-font-size, inherit);
-      font-style: var(--heading-span-style, normal);
-    }
+  h1 span,
+  h2 span {
+    display: var(--heading-span-display, inline);
+    color: var(--heading-span-foreground, var(--black));
+    font-size: var(--heading-span-font-size, inherit);
+    font-style: var(--heading-span-style, normal);
   }
 }
 
@@ -205,30 +206,28 @@
     @media (width > 960px) {
       --bento-card-image-width: 120%;
     }
+  }
 
-    /* fixing shadow issue in asset */
-    >img {
-      filter: drop-shadow(0 0 1rem hsl(0 0% 0% / .25));
-      border-radius: 100vw;
-      /* box-shadow: 0 0 1rem hsl(0 0% 0%); */
-    }
+  /* fixing shadow issue in asset */
+  .bento-grid> :nth-child(2) img {
+    filter: drop-shadow(0 0 1rem hsl(0 0% 0% / .25));
+    border-radius: 100vw;
+    /* box-shadow: 0 0 1rem hsl(0 0% 0%); */
   }
 
   .bento-grid> :nth-child(3) {
     --bento-card-surface: var(--accent-base);
 
     grid-area: three;
+  }
 
+  .bento-grid> :nth-child(3) img {
+    --bento-card-image-width: 60%;
+    margin-bottom: -55px;
 
-    >img {
-      --bento-card-image-width: 60%;
-
-      margin-bottom: -55px;
-
-      @media (width > 960px) {
-        --bento-card-image-width: 80%;
-        margin-bottom: -125px;
-      }
+    @media (width > 960px) {
+      --bento-card-image-width: 80%;
+      margin-bottom: -125px;
     }
   }
 
