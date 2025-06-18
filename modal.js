@@ -336,12 +336,16 @@ class BentoModal {
       <div class="modal-overlay" id="bentoModal">
         <div class="modal-content">
           <button class="modal-close" id="modalClose">&times;</button>
-          <div class="modal-header">
-            <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-left">
+            <div class="modal-header">
+              <h2 class="modal-title" id="modalTitle"></h2>
+              <p class="modal-description" id="modalDescription"></p>
+            </div>
+            <div class="modal-features" id="modalFeatures"></div>
+          </div>
+          <div class="modal-right">
             <img class="modal-image" id="modalImage" src="" alt="">
           </div>
-          <p class="modal-description" id="modalDescription"></p>
-          <ul class="modal-features" id="modalFeatures"></ul>
         </div>
       </div>
     `;

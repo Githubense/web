@@ -2,12 +2,16 @@
       <div class="modal-overlay" id="bentoModal">
         <div class="modal-content">
           <button class="modal-close" id="modalClose">&times;</button>
-          <div class="modal-header">
-            <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-left">
+            <div class="modal-header">
+              <h2 class="modal-title" id="modalTitle"></h2>
+              <p class="modal-description" id="modalDescription"></p>
+            </div>
+            <div class="modal-features" id="modalFeatures"></div>
+          </div>
+          <div class="modal-right">
             <img class="modal-image" id="modalImage" src="" alt="">
           </div>
-          <p class="modal-description" id="modalDescription"></p>
-          <ul class="modal-features" id="modalFeatures"></ul>
         </div>
       </div>
     `;document.body.insertAdjacentHTML("beforeend",r),this.modal=document.getElementById("bentoModal"),this.modalTitle=document.getElementById("modalTitle"),this.modalDescription=document.getElementById("modalDescription"),this.modalFeatures=document.getElementById("modalFeatures"),this.modalImage=document.getElementById("modalImage"),this.modalClose=document.getElementById("modalClose")}bindEvents(){document.querySelectorAll(".bento-grid > div").forEach((i,o)=>{i.addEventListener("click",()=>this.openModal(o+1))}),this.modalClose.addEventListener("click",()=>this.closeModal()),this.modal.addEventListener("click",i=>{i.target===this.modal&&this.closeModal()}),document.addEventListener("keydown",i=>{i.key==="Escape"&&this.modal.classList.contains("active")&&this.closeModal()})}openModal(r){const i=this.modalData[r];!i||(this.modalTitle.textContent=i.title,this.modalDescription.textContent=i.description,this.modalImage.src=i.image,this.modalImage.alt=i.title,this.modalFeatures.innerHTML="",i.sections&&i.sections.forEach(o=>{const e=document.createElement("div");e.style.marginBottom="32px";const t=document.createElement("h3");if(t.textContent=o.title,t.style.fontSize="1.25rem",t.style.fontWeight="600",t.style.color="var(--primary-base)",t.style.marginBottom="8px",t.style.borderBottom="2px solid var(--primary-base)",t.style.paddingBottom="8px",e.appendChild(t),o.subtitle){const s=document.createElement("p");s.textContent=o.subtitle,s.style.fontSize="0.9rem",s.style.color="var(--black)",s.style.opacity="0.7",s.style.marginBottom="12px",s.style.fontStyle="italic",e.appendChild(s)}const a=document.createElement("ul");a.style.listStyle="none",a.style.padding="0",a.style.margin="0",o.items.forEach(s=>{const l=document.createElement("li");l.style.padding="8px 0",l.style.borderBottom="1px solid var(--off-white)",l.style.display="flex",l.style.alignItems="flex-start",l.style.gap="12px",l.style.lineHeight="1.4";const n=document.createElement("span");n.textContent="\u2022",n.style.background="var(--primary-base)",n.style.color="var(--white)",n.style.width="20px",n.style.height="20px",n.style.borderRadius="50%",n.style.display="flex",n.style.alignItems="center",n.style.justifyContent="center",n.style.fontSize="12px",n.style.fontWeight="bold",n.style.flexShrink="0",n.style.marginTop="2px";const c=document.createElement("span");c.textContent=s,c.style.flex="1",l.appendChild(n),l.appendChild(c),a.appendChild(l)}),e.appendChild(a),this.modalFeatures.appendChild(e)}),this.modal.classList.add("active"),document.body.style.overflow="hidden")}closeModal(){this.modal.classList.remove("active"),document.body.style.overflow=""}}document.addEventListener("DOMContentLoaded",()=>{new m});
