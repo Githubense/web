@@ -1,26 +1,14 @@
 // Modal functionality for bento grid detailed views
 
 // Import images so Vite can process them
-import createPostImg from './assets/images/illustration-create-post.webp?url';
-import fiveStarsImg from './assets/images/illustration-five-stars.webp?url';
+import createPostImg from './assets/images/illustration-create-post.webp';
+import fiveStarsImg from './assets/images/illustration-five-stars.webp';
 import aiContentImg from './assets/images/illustration-ai-content.webp';
 import audienceGrowthImg from './assets/images/illustration-audience-growth.webp';
 import multiplePlatformsImg from './assets/images/illustration-multiple-platforms.webp';
 import consistentScheduleImg from './assets/images/illustration-consistent-schedule.webp';
 import growFollowersImg from './assets/images/illustration-grow-followers.webp';
 import schedulePostsImg from './assets/images/illustration-schedule-posts.webp';
-
-// Debug: Log imported images to verify they're working
-console.log('Imported images:', {
-  createPostImg,
-  fiveStarsImg,
-  aiContentImg,
-  audienceGrowthImg,
-  multiplePlatformsImg,
-  consistentScheduleImg,
-  growFollowersImg,
-  schedulePostsImg
-});
 
 class BentoModal {
   constructor() {
