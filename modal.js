@@ -482,11 +482,17 @@ class BentoModal {
     // Show modal
     this.modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    
+    // Reset modal content scroll to top
+    const modalContent = this.modal.querySelector('.modal-content');
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
   }
 
   closeModal() {
     this.modal.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.style.overflow = 'hidden'; // Keep main page scroll disabled
   }
 }
 
