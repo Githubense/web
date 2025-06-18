@@ -25,7 +25,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-create-post.webp"
+        image: "/web/assets/images/illustration-create-post.webp"
       },
       2: {
         title: "Education",
@@ -60,7 +60,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-five-stars.webp"
+        image: "/web/assets/images/illustration-five-stars.webp"
       },
       3: {
         title: "Coding Projects",
@@ -107,7 +107,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-ai-content.webp"
+        image: "/web/assets/images/illustration-ai-content.webp"
       },
       4: {
         title: "Awards & Achievements",
@@ -154,7 +154,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-audience-growth.webp"
+        image: "/web/assets/images/illustration-audience-growth.webp"
       },
       5: {
         title: "Angel Adrian Pimienta Flores",
@@ -190,7 +190,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-multiple-platforms.webp"
+        image: "/web/assets/images/illustration-multiple-platforms.webp"
       },
       6: {
         title: "Certifications",
@@ -216,7 +216,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-consistent-schedule.webp"
+        image: "/web/assets/images/illustration-consistent-schedule.webp"
       },
       7: {
         title: "Skills & Expertise",
@@ -251,7 +251,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "/assets/images/illustration-grow-followers.webp"
+        image: "/web/assets/images/illustration-grow-followers.webp"
       },
       8: {
         title: "Published Apps",
