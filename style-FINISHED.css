@@ -1,14 +1,14 @@
 @font-face {
   font-family: "DM Sans";
   font-weight: 300 500;
-  src: url("/web/assets/fonts/DMSans-VariableFont_opsz,wght.ttf");
+  src: url("./assets/fonts/DMSans-VariableFont_opsz,wght.ttf");
 }
 
 @font-face {
   font-family: "DM Sans";
   font-style: italic;
   font-weight: 300 500;
-  src: url("/web/assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf");
+  src: url("./assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf");
 }
 
 :root {
@@ -377,11 +377,15 @@
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .modal-content {
@@ -396,15 +400,16 @@
     transition: transform 0.3s ease;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 24px;
     align-items: start;
+    margin: 20px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .modal-content {
-      grid-template-columns: 1fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
     }
   }
 
