@@ -1,4 +1,27 @@
 // Modal functionality for bento grid detailed views
+
+// Import images so Vite can process them
+import createPostImg from './assets/images/illustration-create-post.webp?url';
+import fiveStarsImg from './assets/images/illustration-five-stars.webp?url';
+import aiContentImg from './assets/images/illustration-ai-content.webp';
+import audienceGrowthImg from './assets/images/illustration-audience-growth.webp';
+import multiplePlatformsImg from './assets/images/illustration-multiple-platforms.webp';
+import consistentScheduleImg from './assets/images/illustration-consistent-schedule.webp';
+import growFollowersImg from './assets/images/illustration-grow-followers.webp';
+import schedulePostsImg from './assets/images/illustration-schedule-posts.webp';
+
+// Debug: Log imported images to verify they're working
+console.log('Imported images:', {
+  createPostImg,
+  fiveStarsImg,
+  aiContentImg,
+  audienceGrowthImg,
+  multiplePlatformsImg,
+  consistentScheduleImg,
+  growFollowersImg,
+  schedulePostsImg
+});
+
 class BentoModal {
   constructor() {
     this.modalData = {
@@ -25,7 +48,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-create-post.webp"
+        image: createPostImg
       },
       2: {
         title: "Education",
@@ -60,7 +83,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-five-stars.webp"
+        image: fiveStarsImg
       },
       3: {
         title: "Coding Projects",
@@ -107,7 +130,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-ai-content.webp"
+        image: aiContentImg
       },
       4: {
         title: "Awards & Achievements",
@@ -154,7 +177,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-audience-growth.webp"
+        image: audienceGrowthImg
       },
       5: {
         title: "Angel Adrian Pimienta Flores",
@@ -190,7 +213,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-multiple-platforms.webp"
+        image: multiplePlatformsImg
       },
       6: {
         title: "Certifications",
@@ -216,7 +239,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-consistent-schedule.webp"
+        image: consistentScheduleImg
       },
       7: {
         title: "Skills & Expertise",
@@ -251,7 +274,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-grow-followers.webp"
+        image: growFollowersImg
       },
       8: {
         title: "Published Apps",
@@ -285,7 +308,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-schedule-posts.webp"
+        image: schedulePostsImg
       },
       9: {
         title: "Contact & Collaboration",
@@ -319,7 +342,7 @@ class BentoModal {
             ]
           }
         ],
-        image: "./assets/images/illustration-audience-growth.webp"
+        image: audienceGrowthImg
       }
     };
 
