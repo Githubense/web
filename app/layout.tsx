@@ -11,8 +11,15 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
 }
 
+const getBaseUrl = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return 'https://yourusername.github.io/nim/'; // Replace 'yourusername' with your actual GitHub username
+  }
+  return 'http://localhost:3000/';
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nim-fawn.vercel.app/'),
+  metadataBase: new URL(getBaseUrl()),
   alternates: {
     canonical: '/'
   },

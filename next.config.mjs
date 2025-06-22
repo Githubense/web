@@ -1,17 +1,16 @@
 import createMDX from '@next/mdx';
 
-const repoName = 'nim'; // Change to your repo name if different
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  output: 'export', // Enable static export for GitHub Pages
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  basePath: process.env.NODE_ENV === 'production' ? '/nim' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/nim/' : '',
 };
 
 const withMDX = createMDX({
