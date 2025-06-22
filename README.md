@@ -1,69 +1,40 @@
-# Portfolio Website
+<img src="nim/public/cover.jpg" alt="Cover image representing Nim, a personal website template" width="100%" />
 
-This repository contains the source code for a personal portfolio website designed to showcase projects, skills, and achievements. The design is inspired by Bento grids and glassmorphism effects similar to visionOS.
+Nim is a free and open-source personal website template built with Next.js 15, React 19, Tailwind CSS v4, and Motion. Designed for developers, designers, and founders, it combines minimalism with delightful animated components powered by [Motion-Primitives](https://motion-primitives.com).
 
-## Project Structure
-
-The project is organized as follows:
-
-```
-portfolio-website
-├── index.html            # Main HTML file for the portfolio website
-├── css
-│   ├── styles.css       # Main styles for layout and design
-│   └── animations.css    # CSS animations for bento grid elements
-├── js
-│   ├── main.js          # Main JavaScript logic for dynamic behavior
-│   └── animations.js     # JavaScript functions for handling animations
-├── assets
-│   ├── images           # Directory containing images for the portfolio
-│   │   ├── about-bg.jpg
-│   │   ├── code-bg.jpg
-│   │   ├── design-bg.jpg
-│   │   └── profile.jpg
-│   └── videos           # Directory containing video assets
-│       └── demo-reel.mp4
-├── data
-│   └── portfolio.json    # Structured data about portfolio items
-├── _config.yml           # Configuration file for site settings
-└── README.md             # Documentation for the project
-```
+Live demo: [https://nim-fawn.vercel.app](https://nim-fawn.vercel.app)
 
 ## Features
 
-- **Responsive Design**: The website is designed to be responsive and visually appealing across different devices.
-- **Bento Grid Layout**: Each section of the portfolio is represented as a bento grid element, providing a clean and organized presentation.
-- **Glassmorphism Effects**: The design incorporates glassmorphism effects to create a modern and stylish look.
-- **Interactive Animations**: Hover effects and animations enhance user interaction with the bento grid elements.
+- Minimal one-page portfolio layout.
+- Blog support with MDX.
+- Responsive and accessible design.
+- Easy to use
+- [Motion-Primitives](https://motion-primitives.com) for animated components.
 
 ## Getting Started
 
-To set up the project locally, follow these steps:
+For detailed setup instructions, refer to the [Installation Guide](./INSTALLATION.md).
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+```bash
+git clone https://github.com/ibelick/nim.git
+cd nim
+npm install
+npm run dev
+```
 
-2. Navigate to the project directory:
-   ```
-   cd portfolio-website
-   ```
-
-3. Open `index.html` in your web browser to view the portfolio.
-
-## Deployment
-
-You can deploy the portfolio website using GitHub Pages or any other static site hosting service. For GitHub Pages, follow these steps:
-
-1. Push your code to a GitHub repository.
-2. Go to the repository settings.
-3. Enable GitHub Pages from the "Pages" section and select the branch to deploy from.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+Contributions are welcome! Feel free to open issues or submit pull requests to improve Nim.
 
-## License
+## Deployment
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+You can deploy your site to any hosting platform that supports Next.js. For the easiest deployment experience, consider using Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fibelick%2Fnim&env=NEXT_PUBLIC_SITE_URL&project-name=nim&repository-name=nim&redirect-url=https%3A%2F%2Ftwitter.com%2Fibelick&demo-title=Nim&demo-description=Nim%20is%20a%20free%20and%20open-source%20minimal%20personal%20website%20template%20built%20with%20Next.js%2015%2C%20React%2019%2C%20and%20Motion-Primitives.&demo-url=https%3A%2F%2Fnim.vercel.app&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fibelick%2Fnim%2Frefs%2Fheads%2Fmain%2F.github%2Fassets%2Freadme.png&teamSlug=ibelick)
+
+## About
+
+Nim is designed to make personal branding effortless and beautiful. If you enjoy it, consider sharing it and exploring [Motion-Primitives Pro](https://pro.motion-primitives.com/).
