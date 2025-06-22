@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
           
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
         with:
           static_site_generator: next
           
@@ -40,11 +40,23 @@ jobs:
         env:
           NODE_ENV: production
         
-      - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
+      - name: Add .nojekyll file (ensure it exists)
+        run: |
+          if [ ! -f ./out/.nojekyll ]; then
+            echo "Creating .nojekyll file"
+            touch ./out/.nojekyll
+          else
+            echo ".nojekyll file already exists"
+          fi
         
-      - name: List output directory
-        run: ls -la ./out
+      - name: List output directory (debug)
+        run: |
+          echo "Contents of out/ directory:"
+          ls -la ./out
+          echo "Checking for index.html:"
+          ls -la ./out/index.html || echo "index.html not found"
+          echo "Checking for _next directory:"
+          ls -la ./out/_next || echo "_next directory not found"
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
