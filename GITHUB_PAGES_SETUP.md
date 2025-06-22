@@ -8,45 +8,30 @@ Your Nim website is now configured for GitHub Pages deployment! Here's what has 
 - **Next.js Static Export**: Configured in `next.config.mjs`
 - **GitHub Actions Workflow**: Created at `.github/workflows/deploy.yml`
 - **Static Assets**: Optimized for GitHub Pages
-- **Base Path**: Set to `/nim` (change this to match your repository name)
-
-### 📝 Important: Update Your GitHub Username
-
-Before deploying, you need to update the placeholder GitHub username in two files:
-
-1. **app/layout.tsx** (line ~15):
-   ```typescript
-   return 'https://yourusername.github.io/nim/'; // Replace 'yourusername' with your actual GitHub username
-   ```
-
-2. **lib/constants.ts** (line ~2):
-   ```typescript
-   ? 'https://yourusername.github.io/nim' // Replace 'yourusername' with your actual GitHub username
-   ```
+- **Base Path**: Set to `/web` (matching your repository name)
+- **GitHub Username**: Set to `githubense`
 
 ### 🚀 Deployment Steps
 
-1. **Update GitHub Username**: Replace `yourusername` with your actual GitHub username in the files mentioned above.
-
-2. **Enable GitHub Pages**:
+1. **Enable GitHub Pages**:
    - Go to your repository settings on GitHub
    - Navigate to "Pages" section in the left sidebar
    - Set "Source" to "GitHub Actions"
 
-3. **Push Your Changes**:
+2. **Push Your Changes**:
    ```bash
    git add .
    git commit -m "Configure for GitHub Pages deployment"
    git push origin main
    ```
 
-4. **Automatic Deployment**: The GitHub Action will automatically build and deploy your site.
+3. **Automatic Deployment**: The GitHub Action will automatically build and deploy your site.
 
 ### 🌐 Access Your Site
 
 Once deployed, your site will be available at:
 ```
-https://yourusername.github.io/nim/
+https://githubense.github.io/web/
 ```
 
 ### 🔧 Customization

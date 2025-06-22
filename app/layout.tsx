@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 
 const getBaseUrl = () => {
   if (process.env.NODE_ENV === 'production') {
-    return 'https://yourusername.github.io/nim/'; // Replace 'yourusername' with your actual GitHub username
+    return 'https://githubense.github.io/web/';
   }
   return 'http://localhost:3000/';
 };

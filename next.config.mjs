@@ -9,8 +9,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/nim' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/nim/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/web' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/web/' : '',
 };
 
 const withMDX = createMDX({
