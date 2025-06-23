@@ -27,6 +27,16 @@ type SocialLink = {
   link: string
 }
 
+export type AppStoreApp = {
+  image: string
+  name: string
+  tagline: string
+  description: string
+  features: string[]
+  appStoreUrl?: string
+  id: string
+}
+
 export const PROJECTS: Project[] = [
   {
     name: 'Motion Primitives Pro',
@@ -123,3 +133,21 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 export const EMAIL = 'your@email.com'
+
+export const APP_STORE_APPS: AppStoreApp[] = [
+  {
+    id: 'ratingo',
+    image: 'https://images.beta.cosmos.so/40fbc749-6796-485b-9588-20204dd7c8f0?format=jpeg',
+    name: 'Ratingo',
+    tagline: 'Block distractions. Build better habits.',
+    description:
+      'Ratingo is a unique porn-blocking app that uses CBT friction methods and gamification to help you take control of your digital habits. Designed for privacy and effectiveness, Ratingo empowers you to break unwanted patterns and build a healthier relationship with technology.',
+    features: [
+      'Advanced blocking for adult content',
+      'CBT-inspired friction and habit tracking',
+      'Gamified rewards to keep you motivated',
+      'Minimal, privacy-first design',
+    ],
+    appStoreUrl: 'https://apps.apple.com/us/app/no-nut-porn-blocker-ratingo/id6746169519', // Add App Store URL if available
+  },
+]
