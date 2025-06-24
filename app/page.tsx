@@ -4,6 +4,8 @@ import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import { Tilt } from '@/components/ui/tilt';
+import { InfiniteSlider } from '@/components/ui/infinite-slider';
+
 import {
   MorphingDialog,
   MorphingDialogTrigger,
@@ -11,12 +13,16 @@ import {
   MorphingDialogClose,
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
+
+import Link from 'next/link'
+import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   PROJECTS,
+  WORK_EXPERIENCE,
+  BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
-  APP_STORE_APPS,
-  EDUCATION,
+  APP_STORE_APPS, 
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -38,7 +44,55 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
-// Removed unused ProjectVideo, AnimatedBackground, Link, WORK_EXPERIENCE, BLOG_POSTS
+type ProjectVideoProps = {
+  src: string
+}
+
+function ProjectVideo({ src }: ProjectVideoProps) {
+  return (
+    <MorphingDialog
+      transition={{
+        type: 'spring',
+        bounce: 0,
+        duration: 0.3,
+      }}
+    >
+      <MorphingDialogTrigger>
+        <video
+          src={src}
+          autoPlay
+          loop
+          muted
+          className="aspect-video w-full cursor-zoom-in rounded-xl"
+        />
+      </MorphingDialogTrigger>
+      <MorphingDialogContainer>
+        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+          <video
+            src={src}
+            autoPlay
+            loop
+            muted
+            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
+          />
+        </MorphingDialogContent>
+        <MorphingDialogClose
+          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+          variants={{
+            initial: { opacity: 0 },
+            animate: {
+              opacity: 1,
+              transition: { delay: 0.3, duration: 0.1 },
+            },
+            exit: { opacity: 0, transition: { duration: 0 } },
+          }}
+        >
+          <XIcon className="h-5 w-5 text-zinc-500" />
+        </MorphingDialogClose>
+      </MorphingDialogContainer>
+    </MorphingDialog>
+  )
+}
 
 function MagneticSocialLink({
   children,
@@ -182,6 +236,92 @@ function AppStoreCard({
   );
 }
 
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <MorphingDialog transition={{ type: 'spring', stiffness: 200, damping: 24 }}>
+      <MorphingDialogTrigger className="max-w-sm w-full">
+        <div className="aspect-video">
+          <Tilt
+            rotationFactor={6}
+            style={{ transformOrigin: 'center center' }}
+            springOptions={{ stiffness: 26.7, damping: 4.1, mass: 0.2 }}
+            className="group relative rounded-lg"
+          >
+            <Spotlight
+              className="z-10 from-white/50 via-white/20 to-white/10 blur-2xl"
+              size={248}
+              springOptions={{ stiffness: 26.7, damping: 4.1, mass: 0.2 }}
+            />
+            <video
+              src={project.video}
+              autoPlay
+              loop
+              muted
+              className="h-32 w-full rounded-lg object-cover grayscale duration-700 group-hover:grayscale-0"
+            />
+          </Tilt>
+          <div className="flex flex-col space-y-0.5 pb-0 pt-3">
+            <h3 className="font-mono text-sm font-medium text-zinc-500 dark:text-zinc-400">
+              {project.name}
+            </h3>
+            <p className="text-sm text-black dark:text-white">{project.description}</p>
+          </div>
+        </div>
+      </MorphingDialogTrigger>
+      <MorphingDialogContainer>
+        <MorphingDialogContent
+          style={{ borderRadius: '12px' }}
+          className="relative aspect-video h-[50vh] w-full max-w-3xl md:h-[70vh] overflow-y-auto border border-gray-100 bg-white dark:bg-zinc-950 p-0"
+        >
+          <div className="flex h-full w-full flex-col items-center justify-center p-6">
+            <div className="flex justify-center py-6">
+              <video
+                src={project.video}
+                autoPlay
+                loop
+                muted
+                className="h-auto w-[200px] rounded-lg"
+              />
+            </div>
+            <div className="w-full max-w-xl mx-auto">
+              <h2 className="text-2xl font-bold text-black dark:text-white mb-2 text-center">{project.name}</h2>
+              <div className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-3">
+                <p className="text-left">{project.description}</p>
+                <div className="mt-4 flex justify-center">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+                  >
+                    Visit Project
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3 w-3 ml-1"
+                    >
+                      <path
+                        d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                        fill="currentColor"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <MorphingDialogClose className="absolute top-4 right-4 text-zinc-500" />
+        </MorphingDialogContent>
+      </MorphingDialogContainer>
+    </MorphingDialog>
+  );
+}
+
 export default function Personal() {
   return (
     <motion.main
@@ -228,49 +368,13 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-lg font-medium">Projects</h3>
         <div className="w-full">
-          {/* Remove or comment out InfiniteSlider usage if not imported or defined */}
-        </div>
-      </motion.section>
-
-      {/* Education Section */}
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Education</h3>
-        <div className="flex flex-col space-y-2">
-          {EDUCATION.map((edu) => (
-            <div
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              key={edu.id}
-            >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {edu.degree}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {edu.institution}
-                    </p>
-                    <p className="text-zinc-400 dark:text-zinc-500 text-xs mt-1">
-                      {edu.location}
-                    </p>
-                    <p className="text-zinc-400 dark:text-zinc-500 text-xs mt-1">
-                      {edu.expectedGraduation}
-                    </p>
-                    <p className="text-zinc-600 dark:text-zinc-400 text-xs mt-2">
-                      <span className="font-medium">Relevant Coursework:</span> {edu.relevantCoursework}
-                    </p>
-                  </div>
-                </div>
+          <InfiniteSlider speedOnHover={20} gap={24}>
+            {PROJECTS.map((project) => (
+              <div key={project.id} className="w-[320px] max-w-xs flex-shrink-0">
+                <ProjectCard project={project} />
               </div>
-            </div>
-          ))}
+            ))}
+          </InfiniteSlider>
         </div>
       </motion.section>
 
