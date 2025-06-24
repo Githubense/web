@@ -4,6 +4,8 @@ import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import { Tilt } from '@/components/ui/tilt';
+import Link from 'next/link'
+import { AnimatedBackground } from '@/components/ui/animated-background'
 
 import {
   MorphingDialog,
@@ -13,16 +15,15 @@ import {
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
 
-import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+
 import {
   PROJECTS,
-  WORK_EXPERIENCE,
-  BLOG_POSTS,
+  // WORK_EXPERIENCE,
+  // BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
   APP_STORE_APPS,
-  EDUCATION, // import EDUCATION
+  EDUCATION,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -276,7 +277,7 @@ export default function Personal() {
         </div>
       </motion.section>
 
-      {/* <motion.section
+      /* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
@@ -303,7 +304,7 @@ export default function Personal() {
             </div>
           ))}
         </div>
-      </motion.section> */}
+      </motion.section>
 
       {/* <motion.section
         variants={VARIANTS_SECTION}
@@ -415,7 +416,7 @@ export default function Personal() {
           ))}
         </div>
       </motion.section>
-      
+
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
