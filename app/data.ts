@@ -129,7 +129,7 @@ export const EMAIL = 'pimientangel@outlook.com'
 export const APP_STORE_APPS: AppStoreApp[] = [
   {
     id: 'ratingo',
-    image: '/ratingoImage.png', // Changed to local public image
+    image: process.env.NODE_ENV === 'production' ? '/web/ratingoImage.png' : '/ratingoImage.png', // Use correct path for GitHub Pages
     name: 'Ratingo',
     tagline: 'Block distractions. Build better habits.',
     description:
