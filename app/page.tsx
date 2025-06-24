@@ -16,6 +16,7 @@ import {
 
 // import Link from 'next/link'
 // import { AnimatedBackground } from '@/components/ui/animated-background'
+
 import {
   PROJECTS,
   // WORK_EXPERIENCE,
