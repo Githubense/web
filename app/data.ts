@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  image: string // changed from video to image
   id: string
 }
 
@@ -43,28 +43,28 @@ export const PROJECTS: Project[] = [
     description:
       'Advanced components and templates to craft beautiful websites.',
     link: 'https://pro.motion-primitives.com/',
-    video: undefined,
+    image: '/motion-primitives-pro.png', // <-- update to your image path
     id: 'project1',
   },
   {
     name: 'Motion Primitives',
     description: 'UI kit to make beautiful, animated interfaces.',
     link: 'https://motion-primitives.com/',
-    video: undefined,
+    image: '/motion-primitives.png', // <-- update to your image path
     id: 'project2',
   },
   {
     name: 'Fake Project One',
     description: 'A sample project for demonstration purposes.',
     link: 'https://example.com/fake1',
-    video: undefined,
+    image: '/fake1.png', // <-- update to your image path
     id: 'project3',
   },
   {
     name: 'Fake Project Two',
     description: 'Another sample project for the infinite slider.',
     link: 'https://example.com/fake2',
-    video: undefined,
+    image: '/fake2.png', // <-- update to your image path
     id: 'project4',
   },
 ]
