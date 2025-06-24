@@ -25,6 +25,7 @@ import {
   APP_STORE_APPS,
   EDUCATION,
 } from './data'
+import Image from 'next/image'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -162,9 +163,11 @@ function AppStoreCard({
               size={248}
               springOptions={{ stiffness: 26.7, damping: 4.1, mass: 0.2 }}
             />
-            <img
+            <Image
               src={image}
               alt={`${name} App Preview`}
+              width={400}
+              height={180}
               className="h-32 w-full rounded-lg object-cover grayscale duration-700 group-hover:grayscale-0"
             />
           </Tilt>
@@ -183,9 +186,11 @@ function AppStoreCard({
         >
           <div className="flex h-full w-full flex-col items-center justify-center p-6">
             <div className="flex justify-center py-6">
-              <img
+              <Image
                 src={image}
                 alt={`${name} App Preview`}
+                width={200}
+                height={200}
                 className="h-auto w-[200px] rounded-lg"
               />
             </div>
