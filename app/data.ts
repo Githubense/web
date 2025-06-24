@@ -151,3 +151,52 @@ export const APP_STORE_APPS: AppStoreApp[] = [
     appStoreUrl: 'https://apps.apple.com/us/app/no-nut-porn-blocker-ratingo/id6746169519', // Add App Store URL if available
   },
 ]
+
+type Education = {
+  school: string
+  degree: string
+  location: string
+  graduation: string
+  coursework: string[]
+  id: string
+}
+
+export const EDUCATION: Education[] = [
+  {
+    id: 'edu1',
+    school: 'Apple Developer Academy @ Unina Federico II',
+    degree: 'Apple Developer Academy Student',
+    location: 'Napoli, IT',
+    graduation: 'Expected to Graduate in June 2025',
+    coursework: [
+      'Coding',
+      'Graphical User Interface Design',
+      'Business',
+    ],
+  },
+  {
+    id: 'edu2',
+    school: 'Universidad de las Américas Puebla',
+    degree: 'Bachelor of Engineering in Computer Systems Engineering',
+    location: 'Puebla, MX',
+    graduation: 'Expected to Graduate in June 2025',
+    coursework: [
+      'App Development',
+      'Machine Learning',
+      'Cloud Computing',
+      'Artificial Intelligence',
+    ],
+  },
+  {
+    id: 'edu3',
+    school: 'Universidad de las Américas Puebla',
+    degree: 'Bachelor of Engineering in Robotics and Telecommunications Engineering',
+    location: 'Puebla, MX',
+    graduation: 'Expected to Graduate in June 2025',
+    coursework: [
+      'Robotics Vision',
+      'Kinematics and Dynamics of Robots',
+      'Wireless and Mobile Networks',
+    ],
+  },
+]
