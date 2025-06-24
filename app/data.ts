@@ -55,6 +55,20 @@ export const PROJECTS: Project[] = [
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
     id: 'project2',
   },
+  {
+    name: 'Fake Project One',
+    description: 'A sample project for demonstration purposes.',
+    link: 'https://example.com/fake1',
+    video: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    id: 'project3',
+  },
+  {
+    name: 'Fake Project Two',
+    description: 'Another sample project for the infinite slider.',
+    link: 'https://example.com/fake2',
+    video: 'https://www.w3schools.com/html/movie.mp4',
+    id: 'project4',
+  },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
@@ -116,28 +130,20 @@ export const BLOG_POSTS: BlogPost[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
-  },
-  {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://github.com/Githubense',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.linkedin.com/in/angelpimienta',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'pimientangel@outlook.com'
 
 export const APP_STORE_APPS: AppStoreApp[] = [
   {
     id: 'ratingo',
-    image: 'https://images.beta.cosmos.so/40fbc749-6796-485b-9588-20204dd7c8f0?format=jpeg',
+    image: '/ratingoBanner.png',
     name: 'Ratingo',
     tagline: 'Block distractions. Build better habits.',
     description:
