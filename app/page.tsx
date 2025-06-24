@@ -4,8 +4,8 @@ import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import { Tilt } from '@/components/ui/tilt';
-import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+// import Link from 'next/link'
+// import { AnimatedBackground } from '@/components/ui/animated-background'
 
 import {
   MorphingDialog,
