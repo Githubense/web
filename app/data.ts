@@ -129,7 +129,7 @@ export const EMAIL = 'pimientangel@outlook.com'
 export const APP_STORE_APPS: AppStoreApp[] = [
   {
     id: 'ratingo',
-    image: 'https://images.beta.cosmos.so/40fbc749-6796-485b-9588-20204dd7c8f0?format=jpeg',
+    image: '/ratingoImage.png', // Changed to local public image
     name: 'Ratingo',
     tagline: 'Block distractions. Build better habits.',
     description:
@@ -140,7 +140,7 @@ export const APP_STORE_APPS: AppStoreApp[] = [
       'Gamified rewards to keep you motivated',
       'Minimal, privacy-first design',
     ],
-    appStoreUrl: 'https://apps.apple.com/us/app/no-nut-porn-blocker-ratingo/id6746169519', // Add App Store URL if available
+    appStoreUrl: 'https://apps.apple.com/us/app/no-nut-porn-blocker-ratingo/id6746169519',
   },
 ]
 
