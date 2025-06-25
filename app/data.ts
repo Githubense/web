@@ -43,8 +43,7 @@ export const PROJECTS: Project[] = [
     description:
       'Utilize your hand to share content accross devices with a simple pinch gesture.',
     link: 'https://github.com/Githubense/HandDrop',
-    video:
-      undefined, // Changed to local public video
+    video: '/handdropVideo.mp4', // Changed to local public video
     id: 'project1',
   },
   // {
