@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  image: string // changed from video to image
   id: string
 }
 
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
     description:
       'Utilize your hand to share content accross devices with a simple pinch gesture.',
     link: 'https://github.com/Githubense/HandDrop',
-    video: '/handdropVideo.mp4', // Changed to local public video
+    image: '/cover.jpg', // Changed to local public image
     id: 'project1',
   },
   // {
@@ -170,7 +170,7 @@ export const EDUCATION: Education[] = [
     school: 'Universidad de las Américas Puebla',
     degree: 'Bachelor of Engineering in Computer Systems Engineering',
     location: 'Puebla, MX',
-    graduation: 'Expected to Graduate in June 2025',
+    graduation: 'June 2025',
     coursework: [
       'App Development',
       'Machine Learning',
@@ -183,7 +183,7 @@ export const EDUCATION: Education[] = [
     school: 'Universidad de las Américas Puebla',
     degree: 'Bachelor of Engineering in Robotics and Telecommunications Engineering',
     location: 'Puebla, MX',
-    graduation: 'Expected to Graduate in June 2025',
+    graduation: 'June 2025',
     coursework: [
       'Robotics Vision',
       'Kinematics and Dynamics of Robots',

@@ -294,7 +294,14 @@ export default function Personal() {
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={400}
+                  height={225}
+                  className="aspect-video w-full rounded-xl object-cover"
+                  priority={project.name === 'HandDrop: Share anything in a pinch'}
+                />
               </div>
               <div className="px-1">
                 <a
@@ -403,13 +410,13 @@ export default function Personal() {
                 size={64}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-top">
                   <div>
-                    <h4 className="text-zinc-500 dark:text-zinc-400">{edu.degree}</h4>
-                    <p className="font-normal dark:text-zinc-100">{edu.school}</p>
+                    <h4 className="font-normal dark:text-zinc-100">{edu.degree}</h4>
+                    <p className="text-zinc-500 dark:text-zinc-400">{edu.school}</p>
                     <p className="text-zinc-400 dark:text-zinc-500 text-sm">{edu.location}</p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400 mt-2 md:mt-0">{edu.graduation}</p>
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-2 md:mt-0">{edu.graduation}</p>
                 </div>
                 <div className="mt-2">
                   <span className="font-medium text-xs text-zinc-500 dark:text-zinc-400">Relevant Coursework:</span>
