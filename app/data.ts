@@ -39,14 +39,51 @@ export type AppStoreApp = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'HandDrop: Share anything in a pinch',
-    description:
-      'Utilize your hand to share content accross devices with a simple pinch gesture.',
-    link: 'https://github.com/Githubense/HandDrop',
-    image: '/cover.jpg', // Changed to local public image
-    id: 'project1',
+    name: "HandDrop: Share anything in a pinch",
+    description: "Utilize your hand to share content accross devices with a simple pinch gesture.",
+    link: "https://github.com/Githubense/HandDrop",
+    image: process.env.NODE_ENV === 'production' ? '/web/HandDrop - Banner.png' : '/HandDrop - Banner.png',
+    id: "project1",
+  },
+  {
+    name: "Smart Vivarium: Irrigation System",
+    description: "Solution for a self irrigation system with a high scale cartesian robot",
+    link: "https://github.com/Githubense/cartesian_irrigator",
+    image: process.env.NODE_ENV === 'production' ? '/web/SmartVivarium - Banner.png' : '/SmartVivarium - Banner.png',
+    id: "project3",
+  },
+  {
+    name: "Molly's Canvas",
+    description: "Unity-based game bringing awareness to eating disorders.",
+    link: "https://github.com/Githubense/mollysCanvas-iOS",
+    image: process.env.NODE_ENV === 'production' ? '/web/MollysCanvas - Banner.png' : '/MollysCanvas - Banner.png',
+    id: "project2",
+  },
+  {
+    name: "ParkiUDLAP: UDLAP Parking App",
+    description: "Optimization for parking with Computer Vision for smart car allocation.",
+    link: "https://github.com/Githubense/ParkiUDLAPv2",
+    image: process.env.NODE_ENV === 'production' ? '/web/ParkiUDLAP - Banner.png' : '/ParkiUDLAP - Banner.png',
+    id: "project4",
+  },
+  {
+    name: "BeHappy: One smile at a time",
+    description: "Photo tracker of your daily smiles",
+    link: "https://github.com/Githubense/behappy",
+    image: process.env.NODE_ENV === 'production' ? '/web/BeHappy - Banner.png' : '/BeHappy - Banner.png',
+    id: "project3",
   },
   // {
+  //   name: "RelaxWeather: Transport to any weather",
+  //   description: "A weather app that provides a sensory user experience.",
+  //   link: "https://github.com/Githubense/LowPolyWeather",
+  //   image: process.env.NODE_ENV === 'production' ? '/web/RelaxWeather - Banner.png' : '/RelaxWeather - Banner.png',
+  //   id: "project5",
+  // },
+
+  // {
+
+
   //   name: 'Motion Primitives',
   //   description: 'UI kit to make beautiful, animated interfaces.',
   //   link: 'https://motion-primitives.com/',
@@ -128,7 +165,7 @@ export const EMAIL = 'pimientangel@outlook.com'
 export const APP_STORE_APPS: AppStoreApp[] = [
   {
     id: 'ratingo',
-    image: process.env.NODE_ENV === 'production' ? '/web/ratingoImage.png' : '/ratingoImage.png', // Use correct path for GitHub Pages
+    image: process.env.NODE_ENV === 'production' ? '/web/Ratingo - Banner.png' : '/Ratingo - Banner.png', // Use correct path for GitHub Pages
     name: 'Ratingo',
     tagline: 'Block distractions. Build better habits.',
     description:

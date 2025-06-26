@@ -4,6 +4,7 @@ import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import { Tilt } from '@/components/ui/tilt';
+import { InfiniteSlider } from '@/components/ui/infinite-slider';
 // import Link from 'next/link'
 // import { AnimatedBackground } from '@/components/ui/animated-background'
 
@@ -167,8 +168,8 @@ function AppStoreCard({
               src={image}
               alt={`${name} App Preview`}
               width={400}
-              height={128}
-              className="h-32 w-full rounded-lg object-cover grayscale duration-700 group-hover:grayscale-0"
+              height={169}
+              className="w-full rounded-xl object-cover grayscale duration-700 group-hover:grayscale-0"
               priority={name === 'Ratingo'}
             />
           </Tilt>
@@ -183,14 +184,14 @@ function AppStoreCard({
       <MorphingDialogContainer>
         <MorphingDialogContent
           style={{ borderRadius: '12px' }}
-          className="relative aspect-video h-[50vh] w-full max-w-3xl md:h-[70vh] overflow-y-auto border border-gray-100 bg-white dark:bg-zinc-950 p-0"
+          className="relative aspect-video h-[70vh] w-full max-w-3xl md:h-[70vh] overflow-y-auto border border-gray-100 bg-white dark:bg-zinc-950 p-0"
         >
           <div className="flex h-full w-full flex-col items-center justify-center p-6">
             <div className="flex justify-center py-6">
               <Image
                 src={image}
                 alt={`${name} App Preview`}
-                width={200}
+                width={400}
                 height={200}
                 className="h-auto w-[200px] rounded-lg"
                 priority={name === 'Ratingo'}
@@ -290,34 +291,40 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  width={400}
-                  height={225}
-                  className="aspect-video w-full rounded-xl object-cover"
-                  priority={project.name === 'HandDrop: Share anything in a pinch'}
-                />
+        <div className="relative">
+          {/* Progressive opacity gradients */}
+          <div className="absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80 dark:to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80 dark:to-transparent pointer-events-none" />
+          
+          <InfiniteSlider speedOnHover={20} gap={24}>
+            {PROJECTS.map((project) => (
+              <div key={project.name} className="w-[300px] space-y-2 flex-shrink-0">
+                <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    width={300}
+                    height={169}
+                    className="aspect-video w-full rounded-xl object-cover"
+                    priority={project.name === 'HandDrop: Share anything in a pinch'}
+                  />
+                </div>
+                <div className="px-1">
+                  <a
+                    className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+                    href={project.link}
+                    target="_blank"
+                  >
+                    {project.name}
+                    <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
+                  </a>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    {project.description}
+                  </p>
+                </div>
               </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </InfiniteSlider>
         </div>
       </motion.section>
 
